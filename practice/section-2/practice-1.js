@@ -1,13 +1,20 @@
 'use strict';
 
+
+
 function countSameElements(collection) {
+    let count = {};
     let ans = [];
-    for (let i = 0; i < collection.length; i++) {
-        ans['key'] == undefined ? ans['key'] = collection[i] : (ans['key']);
+    collection.forEach(item => {
+        count[item] == undefined ? count[item] = 1 : count[item]++;
+    });
+    for (let prop in count) {
+        ans.push({ 'key': prop, 'count': count[prop] })
     }
     return ans;
 }
 console.log(countSameElements([
+
     'a', 'a', 'a',
     'e', 'e', 'e', 'e', 'e', 'e', 'e',
     'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h',
